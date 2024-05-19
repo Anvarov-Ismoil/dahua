@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  src: url(./fonts/OpenSans-Regular.ttf);
+  font-family: 'OpenSans';
+}
+
+body {
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  max-width: 1330px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.stop-scroll {
+  height: 100%;
+  overflow: hidden !important;
+}
