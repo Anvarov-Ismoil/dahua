@@ -2,16 +2,14 @@
   <footer class="footer bg-black/90 text-white mt-10">
     <div class="container">
       <!-- top -->
-      <div class="footer-top py-10 flex items-start flex-wrap gap-10 sm:gap-20 md:gap-32  xl:gap-60">
+      <div class="footer-top py-10 flex items-start flex-wrap gap-10 sm:gap-20 md:gap-32 xl:gap-60">
         <!-- logo -->
         <div class="logo">
-          <div class="image-block sm:w-[300px]">
+          <div class="image-block w-[170px] sm:w-[200px]">
             <router-link to="/">
-              <img src="../assets/images/hikvision-logo.svg" alt="logo" class="w-full h-full object-cover">
+              <img src="@/assets/images/logo-white.png" alt="logo" class="w-full h-full object-cover">
             </router-link>
           </div>
-          <!-- <p class="text-2xl leading-6 mt-2">Все что связано с зашитой, <br><span
-              class="text-brand-color font-medium">Это про нас.</span></p> -->
         </div>
 
         <!-- contact -->
@@ -62,7 +60,7 @@
       </div>
       <!-- bottom -->
       <div class="copy py-5 border-t border-white/50">
-        <p class="text-center text-lg">&copy; Hikvision Uzbekistan 2017 - 2024. Все права защищены</p>
+        <p class="text-center text-lg">&copy; Dahua Uzbekistan 2017 - 2024. Все права защищены</p>
       </div>
     </div>
   </footer>

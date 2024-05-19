@@ -1,8 +1,8 @@
 <template>
-  <section class="products mb-10 lg:mb-10">
+  <section class="products my-10 lg:mb-10">
     <div class="container">
       <!-- products -->
-      <h2 class="text-center font-bold text-black/90 text-3xl lg:text-4xl mb-10">Товары дня</h2>
+      <h2 class="text-center font-bold text-black/90 text-3xl lg:text-4xl mb-10">Новая продукция</h2>
         <div
           class="products-wrapper flex items-stretch justify-center flex-wrap gap-1 md:gap-3 lg:gap-5">
           <productCard v-for="product in filteredProducts" :key="product.id" :product="product"

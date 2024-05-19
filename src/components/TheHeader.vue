@@ -1,33 +1,12 @@
 <template>
   <header class="header py-3 sm:py-5 text-black/80 bg-white shadow-md">
     <div class="container">
-      <!-- top -->
-      <!-- <div class="top-nav hidden lg:flex items-center justify-between">
-        left
-        <div class="left flex items-center justify-center gap-3">
-          <div class="address flex items-center justify-center gap-2">
-            <i class="fa-solid fa-location-dot text-brand-color"></i>
-            <p>Чиланзарский район, ул. Мукими, 158/1</p>
-          </div>
-
-          <div class="phone flex items-center justify-center gap-2">
-            <i class="fa-solid fa-phone text-brand-color"></i>
-            <p>+998(94)444-44-49</p>
-          </div>
-        </div>
-
-        right
-        <div class="right flex items-center justify-center gap-2">
-          <i class="fa-solid fa-clock text-brand-color"></i>
-          <p>Время работы: Понедельник-пятница, 10:00 - 18:00</p>
-        </div>
-      </div> -->
-      <!-- bottom -->
-      <div class="bottom-nav flex items-center justify-between">
+      <!-- nav -->
+      <div class="nav flex items-center justify-between">
         <!-- logo -->
-        <div class="logo w-48 sm:w-56">
+        <div class="logo w-32 sm:w-40">
           <router-link to="/">
-            <img src="../assets/images/hikvision-logo.svg" alt="logo" class="w-full h-full object-cover">
+            <img src="../assets/images/logo.png" alt="logo" class="w-full h-full object-cover">
           </router-link>
         </div>
 
@@ -46,7 +25,7 @@
 
         <!-- burger -->
         <div class="burger block sm:hidden" @click="openMenu">
-          <i class="fa-solid fa-bars-staggered text-2xl"></i>
+          <i class="fa-solid fa-bars-staggered text-3xl sm:text-2xl text-black"></i>
         </div>
 
         <!-- mobile-menu -->
@@ -79,7 +58,6 @@
     </div>
   </Transition>
 </template>
-
 
 <script>
 import TheModal from './TheModal.vue'
