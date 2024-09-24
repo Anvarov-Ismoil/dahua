@@ -26,7 +26,7 @@
             <p class="text-xl" :class="{ 'text-red-500': isEmpty && !modalData.number }">Ваш номер</p>
             <input id="number" type="text" ref="numberInput"
               class="border-b border-black py-1 pl-1 pr-5 mt-3 text-xl focus:outline-black/70"
-              v-model="modalData.number">
+              v-model="modalData.number" @input="setMask" @focus="setMask" @blur="setMask">
             <label for="number" class="text-lg text-red-600 mb-2 opacity-0"
               :class="{ 'opacity-100': isEmpty && !modalData.number }">
               Поле не должно быть пустым!
@@ -34,7 +34,7 @@
           </div>
           <div class="btn-box mt-3 md:mt-7">
             <button class="btn border-2 border-brand-color hover:bg-brand-color text-brand-color hover:text-white transition-all rounded-full
-            text-xl py-3 px-10 w-full" @click="sendData">
+            text-xl py-3 px-10 w-full">
               Отправить
             </button>
           </div>
@@ -91,7 +91,7 @@ export default {
       }
     },
     async sendMessageToTelegram(chatId) {
-      const token = '8073225287:AAFxU9OeXRQd5CWPCtAwvc5aCWs0jLX8SjA';
+      const token = '7566850313:AAGtoHZqE8F4OOyZv7ctOC5dhBWnCa_7qKE';
       const message = `**Контакты от Dahua:**\nИмя: **${this.modalData.name}**\nНомер: **${this.modalData.number}**`;
       const url = `https://api.telegram.org/bot${token}/sendMessage`;
       try {
