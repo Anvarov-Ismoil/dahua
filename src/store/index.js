@@ -18,7 +18,7 @@ export default createStore({
     async fetchProducts({
       commit
     }) {
-      const API = 'https://domofon.1611297-cp30907.webtm.ru/categories-products/';
+      const API = 'https://hpradmin.dahua.uz/categories-products/';
       try {
         const res = await fetch(API)
         const data = await res.json()

@@ -24,7 +24,7 @@
           </div>
           <div class="input-box flex flex-col justify-center">
             <p class="text-xl" :class="{ 'text-red-500': isEmpty && !modalData.number }">Ваш номер</p>
-            <input id="number" type="number"
+            <input id="number" type="text" ref="numberInput"
               class="border-b border-black py-1 pl-1 pr-5 mt-3 text-xl focus:outline-black/70"
               v-model="modalData.number">
             <label for="number" class="text-lg text-red-600 mb-2 opacity-0"
@@ -67,21 +67,64 @@ export default {
     return {
       modalData: {
         name: '',
-        number: ''
+        number: '+998 '
       },
       isEmpty: false,
       isInfoSent: false,
     }
   },
-  methods: {
-    sendData() {
-      if (this.modalData.name === '' || this.modalData.number === '') {
-        this.isEmpty = true
-      } else {
-        this.isEmpty = false
-        this.isInfoSent = true
-      }
+  computed: {
+    isNumberComplete() {
+      const digitsOnly = this.modalData.number.replace(/\D/g, '');
+      return digitsOnly.length === 12; 
     }
+  },
+  methods: {
+    async sendData() {
+      if (this.modalData.name === '' || !this.isNumberComplete) {
+        this.isEmpty = true;
+      } else {
+        this.isEmpty = false;
+        const chatId = 596968325; // Directly using the chat ID from the provided response
+        await this.sendMessageToTelegram(chatId); // Send message to Telegram
+        this.isInfoSent = true;
+      }
+    },
+    async sendMessageToTelegram(chatId) {
+      const token = '8073225287:AAFxU9OeXRQd5CWPCtAwvc5aCWs0jLX8SjA';
+      const message = `**Контакты от Dahua:**\nИмя: **${this.modalData.name}**\nНомер: **${this.modalData.number}**`;
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'Markdown'
+          })
+        });
+        const data = await response.json();
+      } catch (error) {
+        console.error('Error sending message:', error);
+      }
+    },
+    setMask(event) {
+      let matrix = '+998 ## ### ## ##';
+      let i = 0;
+      const val = this.modalData.number.replace(/\D/g, '');
+
+      event.target.value = matrix.replace(/(?!\+)./g, function (a) {
+        return /[#\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? '' : a;
+      });
+
+      this.modalData.number = event.target.value;
+    }
+  },
+  mounted() {
+    this.setMask({ target: this.$refs.numberInput });
   }
 }
 </script>

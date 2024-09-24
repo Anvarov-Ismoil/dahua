@@ -2,7 +2,8 @@
   <footer class="footer bg-black/90 text-white mt-10">
     <div class="container">
       <!-- top -->
-      <div class="footer-top py-10 flex items-start flex-wrap gap-10 sm:gap-20 md:gap-32 xl:gap-60">
+      <div
+        class="footer-top py-10 flex items-start justify-start lg:justify-center flex-wrap gap-10 sm:gap-20 md:gap-32 xl:gap-60">
         <!-- logo -->
         <div class="logo">
           <div class="image-block w-[170px] sm:w-[200px]">
@@ -22,7 +23,7 @@
             </li>
             <li class="flex items-center gap-3">
               <i class="fa-solid fa-phone text-grey text-lg"></i>
-              <a href="tel:+998944444449">+998(94)944-44-49</a>
+              <a href="tel:+998909222229">+998 (90) 922-22-29</a>
             </li>
             <li class="flex items-center gap-3">
               <i class="fa-solid fa-envelope text-grey text-lg"></i>
